@@ -1,8 +1,8 @@
 <template>
   <!-- <b-container> -->
-    <b-row align-h="between">
-      <b-col v-for="bc1 in bc1Info" :key="bc1.id">
-        <b-card>
+    <b-row align-h="around">
+      <b-col v-for="bc1 in bc1Info" :key="bc1.id" cols="6" md="3">
+        <b-card class="card">
           <b-row>
             <b-col md="4">
               <div :style="{ backgroundColor: bc1.color }" class="img"></div>
@@ -12,7 +12,7 @@
               <h3>{{ bc1.text }}</h3>
             </b-col>
             <hr />
-            <p>{{ bc1.footer }}</p>
+            <p class="footer">{{ bc1.footer }}</p>
           </b-row>
         </b-card>
       </b-col>
@@ -34,25 +34,39 @@ export default {
 }
 
 .img {
-  height: 60px;
-  width: 60px;
+  height: 75px;
+  width: 75px;
+  transform: translateY(-25px);
+  border-radius: 2px;
+  box-shadow: 1px 1px 4px lightslategray;
 }
 
 .text {
   text-align: right;
 }
 
-.subText {
-  font-size: 90%;
+.subText, .footer {
+  font-size: 95%;
+}
+
+.card {
+  max-width: 90%;
+  margin: 4% 5%;
+  padding: 3%;
+  border-radius: 3px;
+  box-shadow: 1px 1px 2px lightslategray;
 }
 
 hr {
-  width: 80%;
+  width: 95%;
+  margin: 1% auto 3% auto;
+  /* margin-top: 1%; */
 }
 
-b-card {
-  margin: 60px 60px;
-}
+
+/* b-card {
+ 
+} */
 
 /* b-row {
    padding: 20%;

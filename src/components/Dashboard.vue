@@ -1,9 +1,8 @@
 <template>
   <div style="margin: 0; padding: 0">
-    <base-card-1 :bc1Info="baseCard1"></base-card-1>
-      <base-card-2></base-card-2>
-    
-      <base-card-3></base-card-3>
+    <base-card-1 :bc1Info="baseCard1" class="basecard"></base-card-1>
+    <base-card-2 :bc2Info="baseCard2" class="basecard"></base-card-2>
+    <base-card-3 :bc3Info="employeeDetails" @deleteRow="deleteRow" class="basecard"></base-card-3>
   </div>
 </template>
 
@@ -14,6 +13,7 @@ import BaseCard3 from "./BaseCard3.vue";
 
 export default {
   components: { BaseCard1, BaseCard2, BaseCard3 },
+  emits: ['deleteRow'],
   name: "Dashboard",
   data() {
     return {
@@ -84,6 +84,12 @@ export default {
         }
       ]
     };
+  },
+  methods: {
+    deleteRow(id) {
+      console.log('dashboard');
+      this.employeeDetails = this.employeeDetails.filter(row => row.id != id);
+    }
   }
 };
 </script>
@@ -97,6 +103,10 @@ export default {
 /* div {
   margin: 0;
 } */
+
+.basecard {
+  margin: 1% 0;
+}
 
 b-col {
   border: 1px solid black;

@@ -1,5 +1,5 @@
 <template>
-  <b-sidebar visible no-close-on-route-change no-header :width="sidebarWidth">
+  <b-sidebar visible no-close-on-route-change no-header :width="sidebarWidth" bg-variant="light" class="sidebar">
     <b-button
       id="hamburger"
       squared
@@ -14,11 +14,11 @@
     <div v-if="sidebarIsActive" id="sideBar">
       <nav class="mb-2">
         <b-nav vertical>
-          <b-nav-item
-            ><router-link to="/dashboard">Dashboard</router-link></b-nav-item
+          <b-nav-item class="nav">
+            <router-link to="/dashboard">Dashboard</router-link></b-nav-item
           >
-          <b-nav-item><router-link to="/maps">Maps</router-link></b-nav-item>
-          <b-nav-item
+          <b-nav-item class="nav"><router-link to="/maps">Maps</router-link></b-nav-item>
+          <b-nav-item class="nav"
             ><router-link to="/userManagement"
               >User Management</router-link
             ></b-nav-item
@@ -61,6 +61,10 @@ export default {
 
 <style scoped>
 
+/* .sidebar {
+  background-color: lightgray;
+} */
+
 #sideBar {
   margin-top: 40%;
 }
@@ -87,6 +91,23 @@ export default {
 .change .bar3 {
   transform: rotate(45deg) translate(-8px, -8px);
 }
+
+.nav {
+  height: 10%;
+  display: block;
+}
+
+/* .nav:hover {
+  background-color: aqua;
+} */
+
+
+/* .nav:hover {
+  border-radius: 3px;
+  font-size: 2rem;
+  font-weight: 500;
+  cursor: pointer;
+} */
 
 /* b-button {
   border-radius: 0;

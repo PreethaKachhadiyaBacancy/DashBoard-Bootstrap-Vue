@@ -48,9 +48,10 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  /* padding-top: 30px; */
   display: block;
   height: 100%;
+  background-color: lightgray;
 }
 
 .sideBar {
@@ -64,6 +65,7 @@ export default {
   margin: 0;
   padding: 0;
   float: right;
+  background-color: lightgray;
   /* display: inline-flex; */
   /* margin-left: 100px; */
  } 
