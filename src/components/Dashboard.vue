@@ -2,7 +2,12 @@
   <div style="margin: 0; padding: 0">
     <base-card-1 :bc1Info="baseCard1" class="basecard"></base-card-1>
     <base-card-2 :bc2Info="baseCard2" class="basecard"></base-card-2>
-    <base-card-3 :bc3Info="employeeDetails" @deleteRow="deleteRow" class="basecard"></base-card-3>
+    <base-card-3
+      :bc3Info="employeeDetails"
+      @deleteRow="deleteRow"
+      @addRow="addNewData"
+      class="basecard"
+    ></base-card-3>
   </div>
 </template>
 
@@ -13,7 +18,7 @@ import BaseCard3 from "./BaseCard3.vue";
 
 export default {
   components: { BaseCard1, BaseCard2, BaseCard3 },
-  emits: ['deleteRow'],
+  emits: ["deleteRow"],
   name: "Dashboard",
   data() {
     return {
@@ -65,19 +70,19 @@ export default {
       ],
       employeeDetails: [
         {
-          id: "1",
+          id: Math.random(),
           name: "Dakota Rice",
           salary: "$36,738",
           country: "Niger"
         },
         {
-          id: "2",
+          id: Math.random(),
           name: "abc xyz",
           salary: "$23,789",
           country: "America"
         },
         {
-          id: "3",
+          id: Math.random(),
           name: "pqr mno",
           salary: "$12,345",
           country: "Netherlands"
@@ -87,8 +92,45 @@ export default {
   },
   methods: {
     deleteRow(id) {
-      console.log('dashboard');
+      console.log("dashboard");
       this.employeeDetails = this.employeeDetails.filter(row => row.id != id);
+    },
+    addNewData(data, id) {
+      console.log('dashboard');
+      console.log(data);
+      // console.log(data);
+      console.log('dashboard id: ' + id);
+      console.log('emplolyee details: ');
+      // console.log(this.employeeDetails[0]);
+      // console.log(this.employeeDetails[id-1]);
+
+      if(id) {
+        console.log('inside if');
+      //   this.employeeDetails[id-1].id = data.id;
+      //   this.employeeDetails[id-1].name = data.name;
+      //   this.employeeDetails[id-1].salary = data.salary;
+      //   this.employeeDetails[id-1].country = data.country;
+      // console.log(this.employeeDetails[id-1]);
+        
+
+ this.employeeDetails = this.employeeDetails.map(row => {
+        // if(row.id === id )
+        console.log(row.id);
+        return row.id === id ? data : row;
+      })
+
+      
+      }
+      else {
+      this.employeeDetails.push(data);
+        
+      }
+
+     
+
+      // else {
+      //   this.employeeDetails[data.id] = data;
+      // }
     }
   }
 };

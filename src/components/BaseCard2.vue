@@ -7,12 +7,16 @@
             :style="{ backgroundColor: bc2.color }"
             class="img translate"
           ></div>
+        </b-row>
+        <b-row>
           <div class="texts translate">
             <h4>{{ bc2.text }}</h4>
             <p class="subText">{{ bc2.subText }}</p>
           </div>
-          <hr class="translate"/>
-            <p class="footer translate">{{ bc2.footer }}</p>
+        </b-row>
+        <b-row>
+          <hr class="translate" />
+          <p class="footer translate">{{ bc2.footer }}</p>
         </b-row>
       </b-card>
     </b-col>
@@ -30,6 +34,9 @@ export default {
 * {
   margin: 0;
   padding: 0;
+}
+
+.row {
 }
 
 .subText {
@@ -65,7 +72,6 @@ export default {
 .footer {
   margin-bottom: -30px;
 }
-
 
 hr {
   width: 135%;

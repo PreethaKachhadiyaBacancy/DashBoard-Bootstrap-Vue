@@ -20,6 +20,7 @@ export default {
   data() {
     return {
       routerWidth: '95.8%',
+      
     }
   }, 
   methods: {
@@ -30,7 +31,8 @@ export default {
       else {
         this.routerWidth = '95.8%';
       }
-    }
+    },
+    
   }
 
 };
