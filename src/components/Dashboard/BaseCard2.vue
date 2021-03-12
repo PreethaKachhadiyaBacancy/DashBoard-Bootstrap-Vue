@@ -36,8 +36,7 @@ export default {
   padding: 0;
 }
 
-.row {
-}
+
 
 .subText {
   font-size: 80%;

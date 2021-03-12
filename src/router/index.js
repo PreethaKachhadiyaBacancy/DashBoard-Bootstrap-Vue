@@ -2,7 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Maps from '@/components/Maps'
 import UserManagement from '@/components/UserManagement'
-import Dashboard from '@/components/Dashboard'
+import Dashboard from '@/components/Dashboard/Dashboard'
 import { BootstrapVue, BootstrapVueIcons} from "bootstrap-vue";
 
 import 'bootstrap/dist/css/bootstrap.css';
